@@ -61,3 +61,22 @@ C. SLA (Service Level Agreement) Compliance & Benchmarking:
 - Phase 1: Single-Node Async Load Generation Engine & Core REST API endpoints.
 - Phase 2: Background Task Worker Queue, Persistence DB, and WebSocket Live Ticks.
 - Phase 3: SLA Assertion Engine, Webhook notifications, and HTML/JSON Report exports.
+
+
+6. PYDANTIC DATA VALIDATION & BOUNDARIES (ge / le)
+--------------------------------------------------------------------------------
+To protect our system and ensure clean inputs, we use Pydantic Field validation:
+  - 'ge' = Greater than or Equal to (>=)
+  - 'le' = Less than or Equal to (<=)
+
+Examples:
+  - virtual_users: Field(ge=1, le=5000)
+    Ensures at least 1 virtual user is specified, and caps traffic at 5,000 VUs 
+    to prevent hardware resource exhaustion.
+  - duration_seconds: Field(ge=1, le=3600)
+    Ensures test duration is between 1 second and 1 hour (3,600s).
+
+Benefits:
+  - Automatically catches invalid client inputs and returns HTTP 422 errors 
+    BEFORE executing backend load testing logic.
+
