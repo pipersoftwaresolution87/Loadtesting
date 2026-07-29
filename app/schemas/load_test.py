@@ -38,3 +38,18 @@ class LoadTestSummary(BaseModel):
     p99_latency_ms: float
     status_codes: Dict[int, int]
     ai_analysis: Optional[AISummaryResponse] = None
+
+
+class JobStartResponse(BaseModel):
+    test_id:str
+    status: str
+    message: str
+    target_url:str
+
+
+
+class JobStatusResponse(BaseModel):
+    test_id:str
+    status:str
+    summary:Optional[LoadTestSummary] = None
+    error: Optional[str] = None
