@@ -1,6 +1,6 @@
 import React from 'react';
 import { LoadTestSummary } from '../types/load_test';
-import { Gauge, CheckCircle2, AlertTriangle, Zap, Clock, Activity } from 'lucide-react';
+import { Gauge, CheckCircle2, Zap, Clock, Activity } from 'lucide-react';
 
 interface MetricsOverviewProps {
   summary: LoadTestSummary | null;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { AISummaryResponse } from '../types/load_test';
-import { Sparkles, Award, Lightbulb, ShieldCheck, ShieldAlert } from 'lucide-react';
+import { Sparkles, Lightbulb } from 'lucide-react';
 
 interface AISummaryCardProps {
   aiAnalysis?: AISummaryResponse;

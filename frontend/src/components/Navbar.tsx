@@ -1,5 +1,5 @@
 import React from 'react';
-import { Activity, Zap, Server, ShieldCheck, Wifi, WifiOff } from 'lucide-react';
+import { Zap, Server, Wifi, WifiOff } from 'lucide-react';
 
 interface NavbarProps {
   isMockMode: boolean;
