@@ -1,6 +1,7 @@
 import { LoadTestConfig, LoadTestSummary, JobStartResponse, JobStatusResponse } from '../types/load_test';
 
-const BASE_URL = '/api/v1';
+const API_HOST = import.meta.env.VITE_API_URL || '';
+const BASE_URL = `${API_HOST}/api/v1`;
 
 export class LoadTestService {
   /**
