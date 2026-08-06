@@ -27,3 +27,9 @@ async def root():
         "docs": "/docs",
         "health": f"{settings.API_V1_STR}/health"
     }
+
+@app.get("/health")
+@app.get("/healthz")
+async def health_check():
+    return {"status": "healthy"}
+
